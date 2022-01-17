@@ -8,8 +8,14 @@ namespace Inheritance
 {
     class Animal : Life
     {
-        public Animal(DateTime bd, string n, float w = 0, float h = 0, float d = 0) : base(bd, n, w, h, d)
+        public float timeOfSleeping;
+        public Animal(DateTime bd, string n, float l = 0, float S = 0) : base(bd, n, l)
         {
+            timeOfSleeping = S;
+        }
+        public void Sleep()
+        {
+            Console.WriteLine($"睡眠時間は約{timeOfSleeping}時間。");
         }
     }
 }

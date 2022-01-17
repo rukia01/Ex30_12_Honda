@@ -6,24 +6,26 @@ using System.Threading.Tasks;
 
 namespace Inheritance
 {
-    class Plant : Life
+    class Fish:Animal
     {
-        public float growthDays;
+        public string habitat;
         /// <summary>
-        /// 植物
+        /// 魚
         /// </summary>
         /// <param name="bd">誕生日</param>
-        /// <param name="n">植物の名前</param>
+        /// <param name="n">魚の種類</param>
         /// <param name="l">寿命</param>
-        /// <param name="gD">成長日数</param>
-        public Plant(DateTime bd, string n, float l = 0, float gD = 0) : base(bd, n, l)
+        /// <param name="S">睡眠時間</param>
+        /// <param name="h">生息地</param>
+        public Fish(DateTime bd, string n, float l = 0, float S = 0, string h = "川") : base(bd, n, l, S)
         {
-            growthDays = gD;
+            habitat = h;
         }
         public void SelfIntroduction()
         {
-            Console.WriteLine($"{name}は、約{growthDays}年で成長します。");
+            Console.WriteLine($"{name}は{habitat}に生息しています。");
             Birthday();
+            Sleep();
             LifeSpan();
             BirthdayConfirmation();
         }

@@ -13,6 +13,7 @@ namespace Inheritance
     {
         readonly private string _name;
         readonly private DateTime _birthDay = new DateTime();
+        public float lifespan;
         public DateTime birthday
         {
             get { return _birthDay; }
@@ -21,9 +22,26 @@ namespace Inheritance
         {
             get { return _name; }
         }
-        public Life(DateTime bd ,string n, float  w = 0, float h = 0, float d = 0 ):base(n,w,h,d)
+        public Life(DateTime bd ,string n,float l):base(n)
         {
+            this._name = n;
             this._birthDay = bd;
+            lifespan = l;
+        }
+        public void Birthday()
+        {
+            Console.WriteLine($"誕生日は{birthday.Month}月{birthday.Day}日です。");
+        }
+        public void BirthdayConfirmation()
+        {
+            if (DateTime.Now.Month == _birthDay.Month && DateTime.Now.Day == _birthDay.Day)
+            {
+                Console.WriteLine("今日は誕生日です。");
+            }
+        }
+        public void LifeSpan()
+        {
+            Console.WriteLine($"寿命は{lifespan}年くらいです。");
         }
     }
 }
